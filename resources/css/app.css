@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Freehand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Freehand&family=Judson:ital,wght@0,400;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* agar bisa zoom ke image corousel */
+.carousel-item {
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    transition: transform 0.6s ease;
+}
+.carousel-item:hover img {
+    transform: scale(1.1) translateZ(50px);
+}
+
+/* menghilangkan scroll efek */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* agar bisa zoom ke image */
+.perspectiveZoom {
+    perspective: 1000px;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    transform: scale(1.1) translateZ(50px);
+}
+
+/* efek bounce pada corousel */
+@keyframes physicalBounce {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+}
+
+.bounce-left {
+    animation: physicalBounce 0.4s ease-in-out;
+}
+
+.bounce-right {
+    animation: physicalBounce 0.4s ease-in-out reverse;
+}
+
+.bounce-left {
+    animation: bounce-left 0.5s;
+}
+
+.bounce-right {
+    animation: bounce-right 0.5s;
+}
+
+/* meeting rooms bounce */
+@keyframes bounce-left {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+@keyframes bounce-right {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+}
+
+/* trapesium */
+.trapezoid {
+    clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
